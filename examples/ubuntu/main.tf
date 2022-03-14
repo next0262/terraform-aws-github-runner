@@ -56,10 +56,10 @@ module "runners" {
   # ami_owners = [data.aws_caller_identity.current.account_id]
 
 
-  block_device_mappings = {
+  block_device_mappings = [{
     # Set the block device name for Ubuntu root device
     device_name = "/dev/sda1"
-  }
+  }]
 
   runner_log_files = [
     {
