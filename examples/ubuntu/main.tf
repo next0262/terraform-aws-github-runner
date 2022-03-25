@@ -58,7 +58,12 @@ module "runners" {
 
   block_device_mappings = [{
     # Set the block device name for Ubuntu root device
-    device_name = "/dev/sda1"
+    device_name           = "/dev/sda1"
+    delete_on_termination = true
+    volume_type           = "gp3"
+    volume_size           = 30
+    encrypted             = true
+    iops                  = null
   }]
 
   runner_log_files = [
